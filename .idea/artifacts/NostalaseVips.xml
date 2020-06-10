@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="NostalaseVips">
+    <output-path>$PROJECT_DIR$/out/</output-path>
+    <root id="archive" name="NostalaseVips.jar">
+      <element id="module-output" name="NostalaseVips" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>
