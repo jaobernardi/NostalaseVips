@@ -11,7 +11,6 @@ import org.bukkit.event.Listener;
 
 public class Events implements Listener {
 
-    //Handling Donation
     @EventHandler
     public void onDonation(DonationReceivedEvent event) {
         Donation donation = event.getDonation();
@@ -22,7 +21,7 @@ public class Events implements Listener {
                     ChatColor.translateAlternateColorCodes('&', "&6&lVIP"),
                     ChatColor.translateAlternateColorCodes('&', "&6"+nickname+" se tornou &lVIP&6!"),
                     5,
-                    40,
+                    100,
                     5
             );
             p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 100, 1);

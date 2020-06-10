@@ -1,7 +1,7 @@
 name: 'NeVips'
 main: net.nostalase.vips.Main
 version: '1.0'
-depend: ['CraftingStore']
+depend: ['CraftingStore', 'NostalaseCore']
 
 commands:
   vip:
