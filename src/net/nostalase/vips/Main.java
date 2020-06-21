@@ -22,6 +22,7 @@ public class Main extends JavaPlugin {
         PluginManager manager = getServer().getPluginManager();
 
         this.getCommand("vip").setExecutor(new Vip());
+        this.getCommand("vip").setExecutor(new Vip());
 
         manager.registerEvents(new Events(), this);
     }

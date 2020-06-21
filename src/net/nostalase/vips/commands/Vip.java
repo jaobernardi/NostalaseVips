@@ -32,7 +32,7 @@ public class Vip implements CommandExecutor {
         switch (args[0].toLowerCase()) {
             case "expire":
                 if (player != null && player.isOnline()) {
-                    player.sendMessage("Seu vip expirou.");
+                    player.sendMessage("&cSeu vip expirou");
                     return false;
                 } else {
                     //stuff
