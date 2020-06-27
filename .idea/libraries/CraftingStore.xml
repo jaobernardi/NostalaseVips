@@ -1,10 +1,12 @@
 <component name="libraryTable">
   <library name="CraftingStore">
     <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.15.2.jar!/" />
       <root url="jar://$USER_HOME$/Downloads/CraftingStore.jar!/" />
-      <root url="jar://$USER_HOME$/Downloads/spigot-api-1.15.2-R0.1-20200509.094510-108.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/Downloads/spigot-1.15.2.jar!/" />
+    </SOURCES>
   </library>
 </component>

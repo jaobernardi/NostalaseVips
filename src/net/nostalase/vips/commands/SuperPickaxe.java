@@ -31,11 +31,9 @@ public class SuperPickaxe implements CommandExecutor {
 
         if (super_pickaxe.contains(player.getUniqueId())) {
             super_pickaxe.remove(player.getUniqueId());
-            player.removeMetadata("superpickaxe", this.plugin);
             Utils.sendMessage(player, "&5&lVIP&7 - Você &c&ldesativou&7 a &6Super Picareta");
         } else {
             super_pickaxe.add(player.getUniqueId());
-            player.setMetadata("superpickaxe", new FixedMetadataValue(this.plugin, true));
             Utils.sendMessage(player, "&5&lVIP&7 - Você &a&lativou&7 a &6Super Picareta");
         }
 

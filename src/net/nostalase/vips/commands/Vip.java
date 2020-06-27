@@ -1,5 +1,7 @@
 package net.nostalase.vips.commands;
 
+import net.md_5.bungee.api.ChatMessageType;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.nostalase.vips.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -32,7 +34,9 @@ public class Vip implements CommandExecutor {
         switch (args[0].toLowerCase()) {
             case "expire":
                 if (player != null && player.isOnline()) {
-                    player.sendMessage("&cSeu vip expirou");
+                    Utils.sendMessage(player, " ");
+                    Utils.sendMessage(player, "&6&lVIPS&7 - Olá! infelizmente seu vip expirou, caso queira continuar sendo vip, você pode adiquirir outro através de nossa loja!");
+                    Utils.sendMessage(player, " ");
                     return false;
                 } else {
                     //stuff
@@ -43,11 +47,12 @@ public class Vip implements CommandExecutor {
                 for (Player p: Bukkit.getOnlinePlayers()) {
                     p.sendTitle(
                             ChatColor.translateAlternateColorCodes('&', "&6&lVIP"),
-                            ChatColor.translateAlternateColorCodes('&', "&6"+nickname+" renovou seu &lVIP&6!"),
+                            ChatColor.translateAlternateColorCodes('&', "&6"+nickname+" se tornou &lVIP&6!"),
                             5,
                             100,
                             5
                     );
+                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("Acesse a nossa loja em loja.nostalase.net para se tornar vip!"));
                     p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 100, 1);
                 }
             case "renew":
@@ -60,6 +65,7 @@ public class Vip implements CommandExecutor {
                             100,
                             5
                     );
+                    p.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent("Acesse a nossa loja em loja.nostalase.net para se tornar vip!"));
                     p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 100, 1);
                 }
         }

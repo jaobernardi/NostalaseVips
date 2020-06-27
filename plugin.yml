@@ -8,7 +8,17 @@ commands:
       permission: nevips.manage
       permission-message: §c§l Você não pode executar esse comando.
       aliases: [nevip]
+  superpickae:
+      permission: nevips.vip.superpick
+      permission-message: §c§l Você não pode executar esse comando.
+      aliases: [superpick]
 
 permissions:
   nevips.manage:
+    default: op
+  nevips.vip.chunks:
+    default: op
+  nevips.vip.superpick:
+    default: op
+  nevips.vip.slot:
     default: op
