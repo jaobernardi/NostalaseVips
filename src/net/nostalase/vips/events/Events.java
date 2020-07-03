@@ -6,6 +6,7 @@ import net.nostalase.vips.commands.SuperPickaxe;
 import net.nostalase.vips.utils.Utils;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -15,31 +16,20 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import java.util.Objects;
+
 public class Events implements Listener {
 
     @EventHandler
-    public void onDonation(DonationReceivedEvent event) {
-        Donation donation = event.getDonation();
-        String nickname = donation.getPlayer().getUsername();
-        String pack = donation.getPackage().getName();
-        for (Player p: Bukkit.getOnlinePlayers()) {
-            p.sendTitle(
-                    ChatColor.translateAlternateColorCodes('&', "&6&lVIP"),
-                    ChatColor.translateAlternateColorCodes('&', "&6"+nickname+" se tornou &lVIP&6!"),
-                    5,
-                    100,
-                    5
-            );
-            p.playSound(p.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 100, 1);
-        }
-    }
-    @EventHandler
     public void onBlock(PlayerInteractEvent event) {
-        if (event.getItem()!=null&&Utils.isPickAxe(event.getItem().getType())&& SuperPickaxe.super_pickaxe.contains(event.getPlayer().getUniqueId())) {
+        if (event.getAction().equals(Action.LEFT_CLICK_BLOCK)&&event.getItem()!=null&&Utils.isPickAxe(event.getItem().getType())&& SuperPickaxe.super_pickaxe.contains(event.getPlayer().getUniqueId())) {
             Damageable dmg = (Damageable) event.getItem().getItemMeta();
-            dmg.setDamage(dmg.getDamage()-1);
+            if(event.getClickedBlock().getType().getHardness()<0) {return;}
+            if (!(dmg.getDamage()>=event.getItem().getType().getMaxDurability())){
+
+            dmg.setDamage(dmg.getDamage()+10);
             event.getItem().setItemMeta((ItemMeta)dmg);
-            event.getClickedBlock().breakNaturally(event.getItem());
+            event.getClickedBlock().breakNaturally(event.getItem());}
         }
     }
 

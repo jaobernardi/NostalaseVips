@@ -1,6 +1,7 @@
 name: 'NeVips'
 main: net.nostalase.vips.Main
 version: '1.0'
+api-version: 1.15
 depend: ['CraftingStore', 'NostalaseCore']
 
 commands:
@@ -8,7 +9,7 @@ commands:
       permission: nevips.manage
       permission-message: §c§l Você não pode executar esse comando.
       aliases: [nevip]
-  superpickae:
+  superpickaxe:
       permission: nevips.vip.superpick
       permission-message: §c§l Você não pode executar esse comando.
       aliases: [superpick]
